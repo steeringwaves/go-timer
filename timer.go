@@ -48,6 +48,7 @@ func NewTimer(d time.Duration) *Timer {
 }
 
 func (t *Timer) Stop() bool {
+	t.cancel()
 	stopped := true
 	if !t.timer.Stop() {
 		stopped = false
